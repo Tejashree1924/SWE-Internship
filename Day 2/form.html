@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background: #e6f4ea;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container, #output {
+    background: #fff;
+    max-width: 600px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 8px;
+  }
+
+  #output {
+    margin-top: 20px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .row .form-group {
+    flex: 1;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #87909e;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 20px;
+  }
+
+  .radio-option {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #87909e;
+    border-radius: 6px;
+    padding: 10px;
+  }
+
+  .consent-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+    background: #0c7c59;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="form-container">
+    <h1>Contact Us</h1>
+    <form id="contactForm">
+
+      <div class="row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="firstName" required>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lastName" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Query Type</label>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="queryType" value="General Enquiry" required>
+            General Enquiry
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="queryType" value="Support Request">
+            Support Request
+          </label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Message</label>
+        <textarea id="message" required></textarea>
+      </div>
+
+      <div class="form-group consent-group">
+        <input type="checkbox" id="consent" required>
+        <label>I consent to being contacted by the team</label>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div id="output">
+    <h1>Submitted Entries</h1>
+    <ul id="list"></ul>
+  </div>
+
+  <script src="jsscript.js"></script>
+
+</body>
+</html>
